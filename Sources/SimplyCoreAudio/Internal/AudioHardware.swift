@@ -18,14 +18,15 @@ final class AudioHardware {
 
     func enableDeviceMonitoring() {
         registerForNotifications()
-
-        for device in allDevices {
+        let newAllDevices = allDevices
+        for device in newAllDevices {
             add(device: device)
         }
     }
 
     func disableDeviceMonitoring() {
-        for device in allKnownDevices {
+        let newAllKnownDevices = allKnownDevices
+        for device in newAllKnownDevices {
             remove(device: device)
         }
 
